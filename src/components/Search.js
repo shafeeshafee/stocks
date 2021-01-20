@@ -31,7 +31,7 @@ const Search = () => {
 				<div>
 					<div className="stock-titles">
 						<h4>{data.symbol}</h4>
-						<p>{data.close ? data.close : ""}</p>
+						<p>{data.latestPrice}</p>
 					</div>
 					<div className="stock-numbers">
 						<p className="company-name">{data.companyName}</p>

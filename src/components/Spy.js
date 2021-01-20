@@ -23,7 +23,7 @@ const Spy = () => {
 			<div>
 				<div className="stock-titles">
 					<h4>{SpyData.symbol}</h4>
-					<p>{SpyData.close ? SpyData.close : "null"}</p>
+					<p>{SpyData.latestPrice}</p>
 				</div>
 				<div className="stock-numbers">
 					<p className="company-name">{SpyData.companyName}</p>

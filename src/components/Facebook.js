@@ -23,7 +23,7 @@ const Facebook = () => {
 			<div>
 				<div className="stock-titles">
 					<h4>{FacebookData.symbol}</h4>
-					<p>{FacebookData.close ? FacebookData.close : "null"}</p>
+					<p>{FacebookData.latestPrice}</p>
 				</div>
 				<div className="stock-numbers">
 					<p className="company-name">{FacebookData.companyName}</p>

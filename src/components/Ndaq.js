@@ -23,7 +23,7 @@ const Ndaq = () => {
 			<div>
 				<div className="stock-titles">
 					<h4>{NdaqData.symbol}</h4>
-					<p>{NdaqData.close ? NdaqData.close : "null"}</p>
+					<p>{NdaqData.latestPrice}</p>
 				</div>
 				<div className="stock-numbers">
 					<p className="company-name">{NdaqData.companyName}</p>

@@ -23,7 +23,7 @@ const Snap = () => {
 			<div>
 				<div className="stock-titles">
 					<h4>{SnapData.symbol}</h4>
-					<p>{SnapData.close ? SnapData.close : "null"}</p>
+					<p>{SnapData.latestPrice}</p>
 				</div>
 				<div className="stock-numbers">
 					<p className="company-name">{SnapData.companyName}</p>
