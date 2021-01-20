@@ -1,0 +1,9 @@
+.heading {
+	background: gray;
+	padding: 0.1em;
+	text-align: left;
+}
+
+.heading h1 {
+	margin-left: 1em;
+}
