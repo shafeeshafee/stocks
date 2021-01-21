@@ -18,16 +18,21 @@ const Ndaq = () => {
 		fetchNDAQData();
 	}, []);
 
+	const checkStockStatus = NdaqData.changePercent < 0 ? "down" : "up";
+
 	return (
 		<div className="stock-container">
 			<div>
 				<div className="stock-titles">
 					<h4>{NdaqData.symbol}</h4>
-					<p>{NdaqData.latestPrice}</p>
+					<p>${NdaqData.latestPrice}</p>
 				</div>
 				<div className="stock-numbers">
 					<p className="company-name">{NdaqData.companyName}</p>
-					<p className="change-percent">{(NdaqData.changePercent * 100).toFixed(2)}%</p>
+					<p className={checkStockStatus}>
+						{NdaqData.changePercent > 0 ? "+" : "-"}
+						{(NdaqData.changePercent * 100).toFixed(2)}%
+					</p>
 				</div>
 			</div>
 		</div>

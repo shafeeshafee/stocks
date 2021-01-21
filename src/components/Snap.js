@@ -18,16 +18,21 @@ const Snap = () => {
 		fetchSNAPData();
 	}, []);
 
+	const checkStockStatus = SnapData.changePercent < 0 ? "down" : "up";
+
 	return (
 		<div className="stock-container">
 			<div>
 				<div className="stock-titles">
 					<h4>{SnapData.symbol}</h4>
-					<p>{SnapData.latestPrice}</p>
+					<p>${SnapData.latestPrice}</p>
 				</div>
 				<div className="stock-numbers">
 					<p className="company-name">{SnapData.companyName}</p>
-					<p className="change-percent">{(SnapData.changePercent * 100).toFixed(2)}%</p>
+					<p className={checkStockStatus}>
+						{SnapData.changePercent > 0 ? "+" : "-"}
+						{(SnapData.changePercent * 100).toFixed(2)}%
+					</p>
 				</div>
 			</div>
 		</div>

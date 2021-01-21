@@ -18,16 +18,21 @@ const Facebook = () => {
 		fetchFACEBOOKData();
 	}, []);
 
+	const checkStockStatus = FacebookData.changePercent < 0 ? "down" : "up";
+
 	return (
 		<div className="stock-container">
 			<div>
 				<div className="stock-titles">
 					<h4>{FacebookData.symbol}</h4>
-					<p>{FacebookData.latestPrice}</p>
+					<p>${FacebookData.latestPrice}</p>
 				</div>
 				<div className="stock-numbers">
 					<p className="company-name">{FacebookData.companyName}</p>
-					<p className="change-percent">{(FacebookData.changePercent * 100).toFixed(2)}%</p>
+					<p className={checkStockStatus}>
+						{FacebookData.changePercent > 0 ? "+" : "-"}
+						{(FacebookData.changePercent * 100).toFixed(2)}%
+					</p>
 				</div>
 			</div>
 		</div>

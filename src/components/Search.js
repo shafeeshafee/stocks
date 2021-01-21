@@ -18,7 +18,11 @@ const Search = () => {
 		}
 	};
 
-	useEffect(() => fetchData(), []);
+	useEffect(() => {
+		fetchData();
+	}, []);
+
+	const checkStockStatus = data.changePercent < 0 ? "down" : "up";
 
 	return (
 		<div>
@@ -31,11 +35,14 @@ const Search = () => {
 				<div>
 					<div className="stock-titles">
 						<h4>{data.symbol}</h4>
-						<p>{data.latestPrice}</p>
+						<p>
+							{data ? "$" : ""}
+							{data.latestPrice}
+						</p>
 					</div>
 					<div className="stock-numbers">
 						<p className="company-name">{data.companyName}</p>
-						<p className="change-percent">{data.changePercent ? `${(data.changePercent * 100).toFixed(2)}%` : ""}</p>
+						<p className={checkStockStatus}>{data.changePercent ? `${(data.changePercent * 100).toFixed(2)}%` : ""}</p>
 					</div>
 				</div>
 			</div>

@@ -18,16 +18,21 @@ const Spy = () => {
 		fetchSPYData();
 	}, []);
 
+	const checkStockStatus = SpyData.changePercent < 0 ? "down" : "up";
+
 	return (
 		<div className="stock-container">
 			<div>
 				<div className="stock-titles">
 					<h4>{SpyData.symbol}</h4>
-					<p>{SpyData.latestPrice}</p>
+					<p>${SpyData.latestPrice}</p>
 				</div>
 				<div className="stock-numbers">
 					<p className="company-name">{SpyData.companyName}</p>
-					<p className="change-percent">{(SpyData.changePercent * 100).toFixed(2)}%</p>
+					<p className={checkStockStatus}>
+						{SpyData.changePercent > 0 ? "+" : "-"}
+						{(SpyData.changePercent * 100).toFixed(2)}%
+					</p>
 				</div>
 			</div>
 		</div>

@@ -31,6 +31,7 @@
 .input input {
 	margin: 0 0.5em;
 	height: 40px;
+	text-align: center;
 }
 
 .input button {
@@ -46,4 +47,14 @@
 
 .input button:hover {
 	background: rgb(80, 80, 80);
+}
+
+.down {
+	background: rgb(189, 61, 61);
+	padding: 0 0.5em;
+}
+
+.up {
+	background: rgba(96, 211, 96, 0.726);
+	padding: 0 0.5em;
 }
