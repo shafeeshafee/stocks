@@ -1,4 +1,8 @@
-.App {
+html {
 	height: 100vh;
 	background: rgb(53, 53, 53);
+}
+
+.App {
+	height: 100%;
 }
